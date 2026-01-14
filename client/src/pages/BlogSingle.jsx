@@ -47,14 +47,14 @@ export default function BlogSingle() {
   /* FETCH BLOG */
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/blogs/${id}`)
+      .get(`https://agrifather.onrender.com/api/blogs/${id}`)
       .then((res) => setBlog(res.data))
       .catch((err) => console.log(err));
   }, [id]);
 
   /* FETCH COMMENTS */
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/comments/${id}`).then((res) => {
+    axios.get(`https://agrifather.onrender.com/api/comments/${id}`).then((res) => {
       setComments(res.data.comments);
       setReplies(res.data.replies);
     });
@@ -71,7 +71,7 @@ export default function BlogSingle() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/comments",
+        "https://agrifather.onrender.com/api/comments",
         { blogId: id, message },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -89,7 +89,7 @@ export default function BlogSingle() {
     if (!window.confirm("Are you sure you want to delete?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/comments/${commentId}`, {
+      await axios.delete(`https://agrifather.onrender.com/api/comments/${commentId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -109,7 +109,7 @@ export default function BlogSingle() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/comments/${commentId}`,
+        `https://agrifather.onrender.com/api/comments/${commentId}`,
         { message: editMessage },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -140,7 +140,7 @@ export default function BlogSingle() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/comments",
+        "https://agrifather.onrender.com/api/comments",
         {
           blogId: id,
           message: replyMessage,

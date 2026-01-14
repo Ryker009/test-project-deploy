@@ -37,7 +37,7 @@ export default function Video() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/videos")
+      .get("https://agrifather.onrender.com/api/videos")
       .then((res) => setVideos(res.data))
       .catch((err) => console.log(err));
   }, []);

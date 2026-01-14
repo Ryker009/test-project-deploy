@@ -15,7 +15,7 @@ export default function ManageBlogs() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/blogs");
+      const res = await axios.get("https://agrifather.onrender.com/api/blogs");
       setBlogs(res.data);
     } catch (err) {
       console.error("Failed to fetch blogs", err);
@@ -28,7 +28,7 @@ export default function ManageBlogs() {
     try {
       const token = localStorage.getItem("token");
 
-      await axios.delete(`http://localhost:5000/api/blogs/${id}`, {
+      await axios.delete(`https://agrifather.onrender.com/api/blogs/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

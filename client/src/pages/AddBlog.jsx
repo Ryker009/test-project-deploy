@@ -25,7 +25,7 @@ export default function AddBlog() {
 
   const handleSubmit = async (e) => {
     try {
-      await axios.post("http://localhost:5000/api/blogs", form, {
+      await axios.post("https://agrifather.onrender.com/api/blogs", form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

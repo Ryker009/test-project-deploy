@@ -12,7 +12,7 @@ export default function AdminMessages() {
     if (!window.confirm("Delete this message?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/contact/${id}`);
+      await axios.delete(`https://agrifather.onrender.com/api/contact/${id}`);
       setMessages((prev) => prev.filter((m) => m._id !== id));
     } catch (err) {
       console.error("Delete failed", err);

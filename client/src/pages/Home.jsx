@@ -40,12 +40,12 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/blogs?trending=true")
+      .get("https://agrifather.onrender.com/api/blogs?trending=true")
       .then((res) => setTrendingBlogs(res.data))
       .catch((err) => console.log(err));
 
     axios
-      .get("http://localhost:5000/api/videos")
+      .get("https://agrifather.onrender.com/api/videos")
       .then((res) => setLatestVideos(res.data.slice(0, 3)))
       .catch((err) => console.log(err));
   }, []);

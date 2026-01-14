@@ -18,7 +18,7 @@ export default function EditBlog() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/blogs/${id}`)
+      .get(`https://agrifather.onrender.com/api/blogs/${id}`)
       .then((res) => setBlog(res.data))
       .catch(() => alert("Failed to load blog"));
   }, [id]);
@@ -31,7 +31,7 @@ export default function EditBlog() {
   const handleUpdate = async () => {
     const token = localStorage.getItem("token");
 
-    await axios.put(`http://localhost:5000/api/blogs/${id}`, blog, {
+    await axios.put(`https://agrifather.onrender.com/api/blogs/${id}`, blog, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -47,7 +47,7 @@ export default function EditBlog() {
 
     const token = localStorage.getItem("token");
 
-    await axios.delete(`http://localhost:5000/api/blogs/${id}`, {
+    await axios.delete(`https://agrifather.onrender.com/api/blogs/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

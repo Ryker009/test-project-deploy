@@ -59,7 +59,7 @@ export default function Contact() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/contact", {
+      await axios.post("https://agrifather.onrender.com/api/contact", {
         name,
         email,
         subject,

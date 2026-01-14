@@ -15,7 +15,7 @@ export default function ManageVideos() {
 
   const fetchVideos = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/videos");
+      const res = await axios.get("https://agrifather.onrender.com/api/videos");
       setVideos(res.data);
     } catch (err) {
       console.error("Failed to fetch videos");
@@ -27,7 +27,7 @@ export default function ManageVideos() {
     if (!window.confirm("Delete this video?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/videos/${id}`, {
+      await axios.delete(`https://agrifather.onrender.com/api/videos/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

@@ -19,7 +19,7 @@ export default function AddVideo() {
 
   const handleSubmit = async (e) => {
     try {
-      await axios.post("http://localhost:5000/api/videos", form, {
+      await axios.post("https://agrifather.onrender.com/api/videos", form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

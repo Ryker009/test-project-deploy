@@ -19,7 +19,7 @@ export default function EditVideo() {
   useEffect(() => {
     const fetchVideo = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/videos`);
+        const res = await axios.get(`https://agrifather.onrender.com/api/videos`);
 
         const video = res.data.find((v) => v._id === id);
         if (!video) return alert("Video not found");
@@ -43,7 +43,7 @@ export default function EditVideo() {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:5000/api/videos/${id}`, form, {
+      await axios.put(`https://agrifather.onrender.com/api/videos/${id}`, form, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -61,7 +61,7 @@ export default function EditVideo() {
     if (!window.confirm("Delete this video permanently?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/videos/${id}`, {
+      await axios.delete(`https://agrifather.onrender.com/api/videos/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

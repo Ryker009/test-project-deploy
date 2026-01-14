@@ -40,9 +40,9 @@ export default function Blogs() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let url = "http://localhost:5000/api/blogs";
+    let url = "https://agrifather.onrender.com/api/blogs";
     if (filter !== "All") {
-      url = `http://localhost:5000/api/blogs?category=${filter}`;
+      url = `https://agrifather.onrender.com/api/blogs?category=${filter}`;
     }
     axios
       .get(url)
@@ -52,7 +52,7 @@ export default function Blogs() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/blogs?trending=true")
+      .get("https://agrifather.onrender.com/api/blogs?trending=true")
       .then((res) => setTrendingBlogs(res.data))
       .catch((err) => console.log(err));
   }, []);
